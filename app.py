@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 # Initialize the Flask application
 app = Flask(__name__)
 
+FLEXIBLE_MODE = os.getenv('FLEXIBLE_MODE', 'false').lower() == 'true'
+
 # Route for the main page
 @app.route('/')
 def show_info():
